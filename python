@@ -1,0 +1,38 @@
+""" Alex has selected a secret number in a guessing game. The player receives feedback after each guess, helping them determine the correct value. The game continues until the player guesses correctly or decides to quit by entering '$'.
+
+
+
+Feedback indicates if the guess is too small, too large, or correct. Players can choose to play again (by entering any character) or quit (by entering '$').
+
+Input format :
+The first line of input consists of a single integer, x, representing Alex's chosen secret number.
+
+Subsequent lines of input consist of a combination of integers n and characters ch, representing the player's guesses and decisions. The input ends when the player decides to quit by entering '$'.
+
+Output format :
+For each guess, print a line containing one of the following:
+
+"Value is small" if the guess is smaller than x.
+"Value is large" if the guess is larger than x.
+"Well Done" if the guess is correct.
+"""
+
+
+x = int()
+x = int(input())
+ch = 'y'
+
+while (ch != '$'):
+    try :
+        n = int(input())
+        if n<x :
+            raise Exception('Value is small')
+        elif n>x :
+            raise Exception('Value is large')
+        else :
+            print("Well Done")
+
+    except Exception as e:
+        print(e)
+    
+    ch = input()[0]
